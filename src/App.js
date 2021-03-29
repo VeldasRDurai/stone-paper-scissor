@@ -1,10 +1,10 @@
-import React from "react";
+import React , {useEffect, useState} from "react";
 import styled from "styled-components";
 
-import Head from "./components/Head/Head"
+import Head from "./components/Head/Head";
+import PopUp from "./components/PopUp/PopUp";
 import PlayerBox from "./components/PlayerBox/PlayerBox";
 import ComputerBox from "./components/ComputerBox/ComputerBox";
-import { useState } from "react";
 
 const Div = styled.div`
   height:90vh;
@@ -16,7 +16,9 @@ const Div = styled.div`
 `;
 
 const App = () => {
-  // const [ score , setScore ] = useState( [ 0 , 0 ] );
+  const [ target    , setTarget    ] = useState(5);
+  const [ showPopUp , setShowPopUp ] = useState(true);
+  const [ gameOver  , setGameOver  ] = useState(false);
   const [resultMode , setResultMode] = useState({ 
     value : false , 
     score : [0,0] ,
@@ -44,14 +46,28 @@ const App = () => {
     }
   }  
   
-return ( 
+  useEffect( () => {
+    if (resultMode.score[0] === target || resultMode.score[1] === target ){
+      setGameOver(true);
+      setShowPopUp(true) ;
+    }
+  } , [resultMode,target] );
+
+  return ( 
     <div onClick={ () => resultMode.value === true && 
         setResultMode({ value:false , result:resultMode.result , user:resultMode.user , computer:resultMode.computer , score:resultMode.score} )}> 
       <Head score={resultMode.score} />
-      <Div> 
-        <PlayerBox   resultMode={resultMode} validator={validator} />
-        <ComputerBox resultMode={resultMode} />
-      </Div>
+      {
+        showPopUp ?
+          <PopUp target={target} setTarget={setTarget} 
+            setShowPopUp={setShowPopUp} 
+            resultMode={resultMode} setResultMode={setResultMode}
+            gameOver={gameOver} setGameOver={setGameOver} /> :
+          <Div> 
+            <PlayerBox   resultMode={resultMode} validator={validator} />
+            <ComputerBox resultMode={resultMode} />
+          </Div>
+      }
     </div>
   )
 }

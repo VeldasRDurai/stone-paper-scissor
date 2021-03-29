@@ -18,6 +18,7 @@ const Div = styled.div`
 const PlayerBox = ({ validator , resultMode }) => {
     return (
         <Div>
+            YOU
             {
                 resultMode.value === false ?
                     ["STONE","PAPER","SCISSOR"].map( (item) =>

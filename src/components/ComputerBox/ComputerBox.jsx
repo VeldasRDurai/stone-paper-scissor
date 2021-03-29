@@ -24,6 +24,7 @@ const ComputerBox = ({ resultMode }) => {
                     <div>It's your turn</div>
                 </> :
                 <>
+                    <div>COMPUTER</div>
                     <SelectionKey value={resultMode.computer} resultMode={resultMode} />
                     <div>
                         {
