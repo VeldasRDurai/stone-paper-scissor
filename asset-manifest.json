@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/stone-paper-scissor/static/js/main.f3fb33cf.chunk.js",
+    "main.js.map": "/stone-paper-scissor/static/js/main.f3fb33cf.chunk.js.map",
+    "runtime-main.js": "/stone-paper-scissor/static/js/runtime-main.10938017.js",
+    "runtime-main.js.map": "/stone-paper-scissor/static/js/runtime-main.10938017.js.map",
+    "static/js/2.13a312df.chunk.js": "/stone-paper-scissor/static/js/2.13a312df.chunk.js",
+    "static/js/2.13a312df.chunk.js.map": "/stone-paper-scissor/static/js/2.13a312df.chunk.js.map",
+    "index.html": "/stone-paper-scissor/index.html",
+    "static/js/2.13a312df.chunk.js.LICENSE.txt": "/stone-paper-scissor/static/js/2.13a312df.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.10938017.js",
+    "static/js/2.13a312df.chunk.js",
+    "static/js/main.f3fb33cf.chunk.js"
+  ]
+}
